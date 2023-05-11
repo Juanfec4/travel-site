@@ -1,0 +1,293 @@
+//==========FONTS==========
+
+//Verdana font
+$primary-font:Verdana, Geneva, Tahoma, sans-serif;;
+
+//==========COLORS==========
+
+//SITE COLORS
+
+//Orange 
+$primary-orange: #DB7A4E;
+
+//NEUTRAL COLORS
+
+//White
+$neutral-white:#FFFFFF;
+//White Accent
+$neutral-white-accent:#FEFAF5;
+//Gray 
+$neutral-gray:#335576;
+
+//Black (20% opacity)
+$neutral-black-light: rgba($color: #000000, $alpha: 0.2);
+
+//==========VARIABLES==========
+$default-padding: 1.25rem;
+$default-margin: 1.25rem;
+
+$default-icon-size: 2.188rem;
+$default-card-width: 18rem;
+
+$default-h1-size: 4rem;
+
+//==========MIXINS==========
+@mixin flex-align-center($orientation){
+    flex-direction: $orientation;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//==========COMPONENTS==========
+
+//Test box --> this is only used for testing components
+.test-box{
+    @include flex-align-center(row);
+    width: 100%;
+    height: auto;
+    align-items: center;
+    background-color: gray;
+    padding: 100px 0;
+}
+
+//Button
+.button{
+    //Appearance
+    background-color: $primary-orange;
+    border-radius: 1.5rem;
+    //Box model
+    width: 9.375rem;
+    padding: calc($default-padding * 0.6) $default-padding;
+    //User Interaction
+    user-select: none;
+    cursor: pointer;
+    //Flexbox container
+    @include flex-align-center(row);
+    //Animation
+    &__link{
+        //Appearance
+        color: $neutral-white-accent;
+        text-decoration: none;
+        font-weight: 500;
+    }
+}
+
+//Destination Card
+.destination-card{
+    //Appearance
+    border-radius: 0.313rem ;
+    box-shadow: 0px 0.25rem 0.25rem $neutral-black-light;
+    background-position: center;
+    background-size: cover;
+    background-color: $neutral-gray; //--> for testing only
+    //Box model
+    box-sizing: border-box;
+    width: $default-card-width; //2:3 aspect ratio
+    height: calc($default-card-width / 2 * 3);
+    border: 0.063rem solid $neutral-black-light;
+    margin: $default-margin;
+    //User Interaction
+    user-select: none;
+    //Flexbox container (to position name)
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    position: relative;
+    //Destination Name
+    &__name{
+    //Appearance
+    color: $neutral-white;
+    //Box model
+    margin: $default-margin;
+    }
+    &__overlay-link{
+        //Position link container over parent div
+        position: absolute;
+        //Make link cover whole destination card container
+        top:0;
+        right: 0;
+        bottom:0;
+        left:0;
+    }
+    //Change background based on place
+    &--hawaii{
+        @extend .destination-card;
+        background-image: url('../assets/images/hawaii.jpg');
+    }
+    &--iceland{
+        @extend .destination-card;
+        background-image: url('../assets/images/iceland.jpg');
+    }
+    &--greece{
+        @extend .destination-card;
+        background-image: url('../assets/images/greece.jpg');
+    }
+}
+
+//Itinerary card
+.itinerary-card{
+    //Appearance
+    background-color: $neutral-white;
+    border-radius: 0.313rem;
+    //Box model
+    box-sizing: border-box;
+    width: $default-card-width; //2:3 aspect ratio
+    height: calc($default-card-width / 2 * 3);
+    padding: calc($default-padding * 0.75);
+    margin: $default-margin;
+    //Container properties
+    text-align: center;
+    &__title{
+        //Appearance
+        color: $neutral-gray;
+        //Box Model
+        border-bottom: 0.125rem solid $neutral-gray;
+    }
+    &__list{
+    //Appearance
+    list-style: none;
+    //Box model
+    padding: 0;
+    }
+    &__list-item{
+    //Appearance
+    background-color: $neutral-white-accent;
+    //Box model
+    padding: calc($default-padding * 0.9);
+    margin-bottom: calc($default-margin * 0.75);
+    }
+}
+
+//Social Icons
+.icon{
+    //Box model
+    margin:  0 $default-margin;
+    //Set anchor for link
+    position: relative;
+    &__image{
+        //Box model
+        max-width: $default-icon-size;
+        max-height: $default-icon-size;
+    }
+    &__link{
+        //Position Icon
+        position: absolute;
+        top:0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+//Navigation bar
+.nav{
+    //Appearance
+    background-color: $neutral-white;
+    //Position
+    position: fixed;
+    top:0;
+    //Box model
+    box-sizing: border-box;
+    width: 100vw;
+    padding: 0 calc($default-padding * 4);
+    //Flex Container
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    &__title{
+        //Appearance
+        color:$neutral-gray;
+        //Box model
+        margin: $default-margin 0 calc($default-margin * 0.75) 0;
+    }
+    &__links-container{
+        //Appearance
+        list-style: none;
+        //Box model
+        padding: 0;
+        margin: 0;
+        //Flex container
+        @include flex-align-center(row);
+    }
+    &__list-item{
+        //Box model
+        padding-bottom: calc($default-padding / 2);
+        margin: calc($default-margin / 2);
+        border-bottom: $neutral-white 0.25rem solid;
+        &--active{
+        @extend .nav__list-item;
+        border-bottom-color: $primary-orange;
+    }
+}
+    &__link{
+        //Appearance 
+        text-decoration: none;
+        color: $neutral-gray;
+        font-weight: bold;
+    }
+    &__title-link{
+        //Appearance 
+        text-decoration: none;
+        color: $neutral-gray;
+        font-weight: bold;
+    }
+}
+
+//Footer
+.footer{
+    //Box Model
+    margin: $default-margin 0;
+    //Flex container
+    display: flex;
+    justify-content: space-around;
+    align-items:stretch;
+    &__section{
+        //Box Model
+        margin-bottom: $default-margin;
+        //Flex Container
+        display: flex;
+        flex-direction: column;
+    }
+    &__information-container{
+        //Box model
+        margin-left: calc(-1 * $default-margin);
+        //Flex Container
+        display: flex;
+        flex-direction: row;
+    }
+    &__hours-sub-section{
+        //Box model
+        margin: 0 $default-margin;
+        //Flex Container
+        display: flex;
+        flex-direction: column;
+    }
+    &__heading{
+        //Appearance
+        font-weight: bold;
+        color: $neutral-gray;
+    }
+    &__sub-heading{
+        //Appearance
+        font-weight: bold;
+        color: $primary-orange;
+        //Box model
+        margin: 0;
+    }
+    &__icons{
+        //Box model
+        height: 100%;
+        margin-left: calc(-1 * $default-margin);
+        //Flex container
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+    }
+    &__text{
+        //Appearance
+        color: $neutral-gray;
+        font-weight: bold;
+        margin-bottom: 0;
+    }
+}

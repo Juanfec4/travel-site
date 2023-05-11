@@ -1,0 +1,78 @@
+@import './global';
+@import './destinations';
+
+
+//Set Defaults
+html{
+    font-family: $primary-font;
+    body{
+        margin: 0;
+        overflow-x: hidden;
+    }
+}
+
+h3{
+    letter-spacing:0.094rem;
+    font-size: 1.5rem;
+}
+h4{
+    font-weight: 900;
+    font-size: 1.25rem;
+}
+
+//LANDING PAGE
+
+.hero{
+    //Appearance
+    background-color: $neutral-white-accent;
+    //Box model
+    padding: calc($default-padding * 3);
+    margin-top: calc($default-margin * 3);
+    //Flex container
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    &__content{
+        max-width: 45%;
+    }
+    &__title{
+        //Appearance
+        color: $neutral-gray;
+        font-weight: bold;
+        font-size: 2.5rem;
+        //Box model
+        margin-top: calc($default-margin * 4);
+    }
+    &__copy{
+        //Appearance
+        color: $neutral-gray;
+        //Box model
+        margin: calc($default-margin * 1.5) 0;
+
+    }
+    &__image{
+        max-width: 40%;
+    }
+}
+
+.recommended{
+    //Box model
+    width:100vw;
+    padding: $default-padding;
+    margin: $default-margin;
+    //Flexbox container
+    display: flex;
+    flex-direction: column;
+    &__title{
+        //Appearance
+        font-size: 2rem;
+        color: $neutral-gray;
+        //Box model
+        margin-left: calc($default-margin * 4);
+    }
+    &__cards-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+}

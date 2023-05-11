@@ -1,0 +1,44 @@
+
+//DESTINATION PAGE TEMPLATE
+
+.destination{
+    //Appearance
+    background-position: center;
+    background-size: cover;
+    //Box model
+    box-sizing: border-box;
+    min-width: 100vw;
+    min-height: 100vh;
+    padding: $default-padding calc($default-padding * 4);
+    margin-top: calc($default-margin * 2);
+    //Flexbox container
+    display: flex;
+    flex-direction: column;
+    //Change background based on destination 
+    &--hawaii{
+        @extend .destination;
+        background-image: url('../assets/images/hawaii.jpg');
+    }
+    &--iceland{
+        @extend .destination;
+        background-image: url('../assets/images/iceland.jpg');
+    }
+    &--greece{
+        @extend .destination;
+        background-image: url('../assets/images/greece.jpg');
+    }
+    &__title{
+        //Appearance
+        color: $neutral-white;
+        font-size: $default-h1-size;
+        margin: calc($default-margin * 2) calc($default-margin * 6);
+    }
+    &__itinerary{
+        //Box model
+        padding: 0 calc($default-padding * 2);
+        //Flexbox container
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+}

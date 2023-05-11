@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../scss/main.css" />
+    <title>Home - Travel Site Project (Juan Cardenas)</title>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav>
+      <div class="nav">
+        <!-- Contain the title to keep it separate from links (for flexbox) -->
+        <div class="nav__title-container">
+          <h4 class="nav__title">
+            <a class="nav__title-link" href="./index.html">Travel Site</a>
+          </h4>
+        </div>
+        <!-- A list of links -->
+        <ul class="nav__links-container">
+          <!-- Link items (contain a link tag within) -->
+          <!-- The [--active] modifier is used by the css to make the underline effect -->
+          <li class="nav__list-item--active">
+            <a class="nav__link" href="./index.html">Home</a>
+          </li>
+          <li class="nav__list-item">
+            <a class="nav__link" href="./pages/hawaii.html">Hawaii</a>
+          </li>
+          <li class="nav__list-item">
+            <a class="nav__link" href="./pages/iceland.html">Iceland</a>
+          </li>
+          <li class="nav__list-item">
+            <a class="nav__link" href="./pages/greece.html">Greece</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero -->
+      <section>
+        <div class="hero">
+          <!-- Content container (to ensure flexbox is not applied to child elements) -->
+          <div class="hero__content">
+            <!-- Hero title -->
+            <h1 class="hero__title">
+              Traveling Comes With Endless Discoveries
+            </h1>
+            <!-- Hero text -->
+            <p class="hero__copy">
+              Don't let your dreams be just dreams. Experience the world by
+              booking a vacation with us now.
+            </p>
+            <!-- Button component -->
+            <div class="button">
+              <!-- Button link -->
+              <a class="button__link" href=""> Get Started</a>
+            </div>
+          </div>
+          <!-- Hero image -->
+          <img
+            class="hero__image"
+            src="../assets/images/hero.png"
+            alt="airplane flying around earth"
+          />
+        </div>
+      </section>
+      <!-- Recommendations Section -->
+      <section>
+        <!-- Recommended container -->
+        <div class="recommended">
+          <!-- Recommended title -->
+          <h2 class="recommended__title">Recommendations</h2>
+          <!-- Destination cards container -->
+          <div class="recommended__cards-container">
+            <!-- Destination card component -->
+            <!-- [--destination] modifier will change background -->
+            <div class="destination-card--hawaii">
+              <!-- Destination card title -->
+              <h3 class="destination-card__name">Hawaii</h3>
+              <!-- Destination card link (will be positioned to cover parent div) -->
+              <a
+                class="destination-card__overlay-link"
+                href="./pages/hawaii.html"
+              ></a>
+            </div>
+            <!-- Destination card component -->
+            <!-- [--destination] modifier will change background -->
+            <div class="destination-card--iceland">
+              <!-- Destination card title -->
+              <h3 class="destination-card__name">Iceland</h3>
+              <!-- Destination card link (will be positioned to cover parent div) -->
+              <a
+                class="destination-card__overlay-link"
+                href="./pages/iceland.html"
+              ></a>
+            </div>
+            <!-- Destination card component -->
+            <!-- [--destination] modifier will change background -->
+            <div class="destination-card--greece">
+              <!-- Destination card title -->
+              <h3 class="destination-card__name">Greece</h3>
+              <!-- Destination card link (will be positioned to cover parent div) -->
+              <a
+                class="destination-card__overlay-link"
+                href="./pages/greece.html"
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer>
+      <!-- Main footer container -->
+      <div class="footer">
+        <!-- Footer section (Contact) -->
+        <div class="footer__section">
+          <!-- Footer section title-->
+          <h2 class="footer__heading">Contact</h2>
+          <!-- Footer section sub-title-->
+          <h5 class="footer__sub-heading">EMAIL</h5>
+          <!-- Footer section content-->
+          <p class="footer__text">info@travelsite.com</p>
+        </div>
+        <!-- Footer section (Hours) -->
+        <div class="footer__section">
+          <!-- Footer section title-->
+          <h2 class="footer__heading">Hours</h2>
+          <!-- Information container (ensures proper flexbox orientation) -->
+          <div class="footer__information-container">
+            <!-- Footer sub-section for a single hour slot-->
+            <div class="footer__hours-sub-section">
+              <!-- Footer section sub-title-->
+              <h5 class="footer__sub-heading">MONDAY - FRIDAY</h5>
+              <!-- Footer hour slot text -->
+              <p class="footer__text">9:00 AM - 5:00 PM</p>
+            </div>
+            <!-- Footer sub-section for a single hour slot-->
+            <div class="footer__hours-sub-section">
+              <!-- Footer section sub-title-->
+              <h5 class="footer__sub-heading">SATURDAY</h5>
+              <!-- Footer hour slot text -->
+              <p class="footer__text">10:00 AM - 4:00 PM</p>
+            </div>
+            <!-- Footer sub-section for a single hour slot-->
+            <div class="footer__hours-sub-section">
+              <!-- Footer section sub-title-->
+              <h5 class="footer__sub-heading">SUNDAY</h5>
+              <!-- Footer hour slot text -->
+              <p class="footer__text">Closed</p>
+            </div>
+          </div>
+        </div>
+        <!-- Footer section (Social) -->
+        <div class="footer__section">
+          <!-- Footer section title-->
+          <h2 class="footer__heading">Social</h2>
+          <!-- Icons container (for flexbox orientation) -->
+          <div class="footer__icons">
+            <!-- Icon component-->
+            <div class="icon">
+              <!-- Icon Image-->
+              <img
+                class="icon__image"
+                src="../assets/Icons/icon-instagram.png"
+                alt="instagram"
+              />
+              <!-- Icon link (positioned on top of div with CSS)-->
+              <a class="icon__link" href="https://www.instagram.com/"></a>
+            </div>
+            <!-- Icon component-->
+            <div class="icon">
+              <!-- Icon Image-->
+              <img
+                class="icon__image"
+                src="../assets/Icons/icon-facebook.png"
+                alt="facebook"
+              />
+              <!-- Icon link (positioned on top of div with CSS)-->
+              <a class="icon__link" href="https://www.facebook.com/"></a>
+            </div>
+            <!-- Icon component-->
+            <div class="icon">
+              <!-- Icon Image-->
+              <img
+                class="icon__image"
+                src="../assets/Icons/icon-twitter.png"
+                alt="twitter"
+              />
+              <!-- Icon link (positioned on top of div with CSS)-->
+              <a class="icon__link" href="https://twitter.com/"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
