@@ -8,7 +8,7 @@ Concepts applied
 
 * HTML
 * Sass
-* partials
+* Partials
 * BEM
 * Reusability
 
