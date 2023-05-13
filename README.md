@@ -1,4 +1,4 @@
-# HTML & SCSS TravelSite project (Juan Cardenas)
+# HTML & SCSS TravelSite project
 
 ## The purpose of this assignment was to create a simple site based on the provided Mockup.
 
